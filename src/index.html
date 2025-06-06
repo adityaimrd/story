@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP Story</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <header class="header">
+        <a href="#main-content" class="skip-link">Skip to content</a>
+        <h1 class="header__title">APP Story</h1>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#/home" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#/add-story" class="nav__link">Add Story</a></li>
+                <li class="nav__item"><a href="#/login" class="nav__link" id="login-link">Login</a></li>
+                <li class="nav__item"><a href="#/register" class="nav__link" id="register-link">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content" class="main-content" tabindex="-1">
+        <section class="stories">
+            <h2 class="stories__title">Recent Stories</h2>
+            <div id="stories-container" class="stories__list"></div>
+        </section>
+        
+        <section class="map-section">
+            <h2 class="map-section__title">Stories Locations</h2>
+            <div id="map" class="map-container"></div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; Dicoding story. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="scripts/map.js"></script>
+</body>
+</html>
