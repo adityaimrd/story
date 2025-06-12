@@ -11,10 +11,6 @@
     "build": "webpack --config webpack.prod.js",
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "deploy": "gh-pages -d dist"
-
-  "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start-dev": "webpack-dev-server --config webpack.dev.js"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
