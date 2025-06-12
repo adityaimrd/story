@@ -50,7 +50,7 @@ class App {
     }
   }
   
-  _registerServiceWorkerAndPush() { // Tambahkan metode ini
+  _registerServiceWorkerAndPush() { 
     registerServiceWorker().then(async (serviceWorkerRegistration) => {
       if (serviceWorkerRegistration) {
         console.log('Service Worker registered. Attempting to subscribe for push notifications...');

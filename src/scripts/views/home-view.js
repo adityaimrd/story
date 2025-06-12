@@ -1,6 +1,6 @@
 import { getHomeTemplate } from '../../templates/pages/home-page.js'; //
 import { getStoryItemTemplate } from '../utils/story-item.js'; //
-import storyDb from '../data/story-db.js'; // Tambahkan ini
+import storyDb from '../data/story-db.js'; 
 
 class HomeView {
   render(stories = []) {
@@ -73,7 +73,7 @@ class HomeView {
     return newMarkers; //
   }
 
-  // Tambahkan metode untuk menghapus semua cerita dari IndexedDB
+
   async clearAllStoriesFromDb() {
     try {
       await storyDb.clearStories(); //

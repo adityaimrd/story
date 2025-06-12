@@ -8,7 +8,7 @@ const storyDb = {
   async init() {
     return openDB(DATABASE_NAME, DATABASE_VERSION, {
       upgrade(database) {
-        database.createObjectStore(OBJECT_STORE_NAME, { keyPath: 'id' }); //
+        database.createObjectStore(OBJECT_STORE_NAME, { keyPath: 'id' }); 
       },
     });
   },

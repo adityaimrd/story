@@ -1,23 +1,3 @@
-self.addEventListener('push', (event) => {
-  const data = event.data.json();
-  const title = data.title || 'Dicoding Story App';
-  const options = {
-    body: data.message || 'You have a new story!',
-    icon: '/icons/icon-192x192.png',
-    vibrate: [100, 50, 100],
-    data: {
-      url: data.url || '/',
-    },
-  };
-
-  event.waitUntil(self.registration.showNotification(title, options));
-});
-
-self.addEventListener('notificationclick', (event) => {
-  event.notification.close();
-  event.waitUntil(clients.openWindow(event.notification.data.url));
-});
-
 const CACHE_NAME = 'dicoding-story-app-v1';
 const urlsToCache = [
   '/',
@@ -83,4 +63,24 @@ self.addEventListener('fetch', (event) => {
     caches.match(request)
       .then((response) => response || fetch(request))
   );
+});
+
+self.addEventListener('push', (event) => {
+  const data = event.data.json();
+  const title = data.title || 'Dicoding Story App';
+  const options = {
+    body: data.message || 'You have a new story!',
+    icon: '/icons/icon-192x192.png',
+    vibrate: [100, 50, 100],
+    data: {
+      url: data.url || '/',
+    },
+  };
+
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  event.waitUntil(clients.openWindow(event.notification.data.url));
 });
