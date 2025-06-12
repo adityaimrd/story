@@ -27,18 +27,7 @@ const subscribePushNotification = async (serviceWorkerRegistration, VAPID_PUBLIC
   try {
     const pushSubscription = await serviceWorkerRegistration.pushManager.subscribe(options);
     console.log('Push subscription:', pushSubscription.toJSON());
-    // Anda bisa mengirim pushSubscription ini ke server Anda jika diperlukan untuk mengirim notifikasi dari server.
-    // Contoh:
-    // const response = await fetch('/api/subscribe', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(pushSubscription),
-    // });
-    // if (!response.ok) {
-    //   throw new Error('Failed to send subscription to server.');
-    // }
+  
   } catch (error) {
     console.error('Failed to subscribe to push notification:', error);
     throw error;
