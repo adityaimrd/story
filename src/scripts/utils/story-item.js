@@ -1,4 +1,4 @@
-export function getStoryItemTemplate(story) {
+export function getStoryItemTemplate(story, isSaved = false) {
     return `
       <article class="story-item">
         <img src="${story.photoUrl}" alt="${story.name}'s story" class="story-item__image">
@@ -11,7 +11,13 @@ export function getStoryItemTemplate(story) {
               <small>Location: ${story.lat.toFixed(4)}, ${story.lon.toFixed(4)}</small>
             </div>
           ` : ''}
-        </div>
-      </article>
+          <div class="story-item__actions">
+            ${isSaved ? `
+              <button class="save-story-btn saved" data-id="${story.id}" disabled>Saved</button>
+            ` : `
+              <button class="save-story-btn" data-id="${story.id}">Save Story</button>
+            `}
+          </div>
+        </div> </article>
     `;
   }

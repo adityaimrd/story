@@ -16,6 +16,7 @@ const urlsToCache = [
   '/icons/icon-384x384.png',
   '/icons/icon-512x512.png',
   '/manifest.json', 
+  '/saved-stories.html',
 ];
 
 self.addEventListener('install', (event) => {

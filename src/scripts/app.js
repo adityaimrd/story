@@ -3,10 +3,11 @@ import HomePresenter from './presenter/home-presenter.js';
 import AddStoryPresenter from './presenter/add-story-presenter.js';
 import LoginPresenter from './presenter/login-presenter.js';
 import RegisterPresenter from './presenter/register-presenter.js';
+import SavedStoriesPresenter from './presenter/saved-stories-presenter.js';
 import { initViewTransition } from './utils/view-transition.js';
 import { registerServiceWorker } from './utils/sw-register.js'; 
 import { subscribePushNotification } from './utils/push-notification.js'; 
-import CONFIG from './config.js'; // Import CONFIG
+import CONFIG from './config.js'; 
 
 class App {
   constructor() {
@@ -14,6 +15,7 @@ class App {
     this._addStoryPresenter = new AddStoryPresenter();
     this._loginPresenter = new LoginPresenter();
     this._registerPresenter = new RegisterPresenter();
+    this._savedStoriesPresenter = new SavedStoriesPresenter();
     
     this._setupNavigation();
     this._renderPage();
@@ -37,6 +39,9 @@ class App {
         break;
       case '#/add-story':
         this._addStoryPresenter.show();
+        break;
+      case '#/saved-stories':
+        this._savedStoriesPresenter.show();
         break;
       case '#/login':
         this._loginPresenter.show();

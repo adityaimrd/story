@@ -641,3 +641,90 @@
       font-size: 1.5rem;
     }
   }
+
+.story-item__actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.save-story-btn,
+.delete-saved-story-btn {
+  background-color: var(--color-accent); 
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.save-story-btn:hover:not(:disabled),
+.delete-saved-story-btn:hover {
+  background-color: #d15656; 
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.save-story-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.save-story-btn.saved {
+  background-color: #4CAF50; 
+  color: white;
+}
+
+.delete-saved-story-btn {
+  background-color: #f44336; 
+}
+
+.delete-saved-story-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+.saved-stories__title {
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.saved-stories__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-accent);
+  border-radius: 3px;
+}
+
+.story-item-wrapper {
+  position: relative; 
+  display: flex;
+  flex-direction: column; 
+}
+
+.story-item-wrapper .delete-saved-story-btn {
+  position: absolute;
+  top: 1rem; 
+  right: 1rem;  
+  z-index: 10; 
+}
+
+@media (max-width: 480px) {
+  .saved-stories__title {
+    font-size: 1.5rem;
+  }
+}
