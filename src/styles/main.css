@@ -1,20 +1,16 @@
 :root {
-    /* Color Variables */
     --color-primary: #8B0000;
     --color-secondary: #660000;
     --color-accent: #A52A2A;
     
-    /* Shadow Variables */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
     
-    /* Border Radius */
     --border-radius-sm: 8px;
     --border-radius-md: 12px;
     --border-radius-lg: 16px;
     
-    /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;

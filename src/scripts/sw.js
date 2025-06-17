@@ -24,6 +24,9 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => cache.addAll(urlsToCache))
       .then(() => self.skipWaiting())
+      .catch((error) => { 
+        console.error('Service Worker installation failed:', error);
+      })
   );
 });
 
@@ -51,7 +54,7 @@ self.addEventListener('fetch', (event) => {
           return networkResponse;
         }).catch((error) => {
             console.error('Fetch failed for API:', error);
-            return new Response('{}', { status: 503, statusText: 'Service Unavailable', headers: new Headers({ 'Content-Type': 'application/json' }) });
+            return new Response(JSON.stringify({ error: true, message: 'Network unavailable or API fetch failed' }), { status: 503, statusText: 'Service Unavailable', headers: new Headers({ 'Content-Type': 'application/json' }) });
         });
 
         return cachedResponse || networkResponsePromise;
@@ -62,7 +65,9 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     caches.match(request)
-      .then((response) => response || fetch(request))
+      .then((response) => response || fetch(request).catch(() => {
+      return caches.match('/index.html');
+      }))
   );
 });
 
