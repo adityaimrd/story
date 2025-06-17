@@ -2,7 +2,6 @@ const CACHE_NAME = 'dicoding-story-app-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/styles/main.css',
   '/scripts/bundle.js',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
